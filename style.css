@@ -1,0 +1,9 @@
+.container {
+  background: lightBlue; }
+  .container .row {
+    width: 100%; }
+
+.container-fluid, .modal-header, .modal-footer {
+  background: #CDD7FA; }
+
+/*# sourceMappingURL=style.css.map */
