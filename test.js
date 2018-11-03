@@ -6,11 +6,7 @@ app.controller('studentsCtrl', function ($http) {
     //     .then(function (response) {
     //         vm.array = response.data.array;
     //     });
-
-    //видалення студента з списку
-    vm.removeItem = function (item) {
-        vm.students.splice(vm.students.indexOf(item), 1);
-    };
+    
 
 //array of all students
     vm.students = [
@@ -49,10 +45,15 @@ app.controller('studentsCtrl', function ($http) {
             student: 'Andrew',
             knowledge: 'basic'
         }
-    ]
+    ];
 
 //the most simple way is use AngularJs filter, also we can write custom filter
 
+//видалення студента з списку
+
+    vm.removeItem = function (item) {
+        this.students.students = this.students.students.filter(student => student !== item)
+    };
 
 
 })
