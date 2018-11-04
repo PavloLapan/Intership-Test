@@ -1,2 +1,0 @@
-# Intershop-Test
-testing

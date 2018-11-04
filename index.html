@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='app'>
-
+<html lang="en" ng-app="app">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>AngularJS </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <!--routing-->
-    <script src="main.js"></script>
-    <!--code-->
-    <script src="test.js"></script>
 </head>
-<body>
-    <div class="container" ng-view>
-       <a href="#/!"></a>
+<body ng-controller="studentsCtrl">
+<div class="container">
+    <div class="row">
+        <div class="row d-flex col-12">
+            <h1 class="text-center pt-3 col-12 mb-5">IntershipTest Lapan Pavlo with AngularJs</h1>
+        </div>
+        <div class="row">
+            <div class="col-6 form-group">
+                <form action="">
+                    <h4 class="ml-4">Список студентів:</h4>
+                    <ol>
+                        <li class="m-1" ng-repeat="studentItem in students"><span>{{studentItem.student}}</span> :
+                            knowledge is - <span>{{studentItem.knowledge}}</span>
+                            <button type="button" class="btn btn-danger ml-2" ng-click="removeItem(studentItem)">
+                                Delete
+                            </button>
+                        </li>
+                    </ol>
+                </form>
+            </div>
+
+            <div class="col-6 form-group">
+                <form action="">
+                    <h4 class="ml-2">Список студентів на інтернатурі:</h4>
+                    <ol>
+                        <li class="m-1" ng-repeat="students in students | filter : 'Upper' : true"><span>{{students.student}}</span>
+                            : knowledge is - <span>{{students.knowledge}}</span></li>
+                    </ol>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+<script src="js/index.js"></script>
 </body>
+
 </html>
